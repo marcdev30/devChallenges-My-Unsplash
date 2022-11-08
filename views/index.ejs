@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>My Unsplash</title>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="/" class="logo"><img src="/img/my_unsplash_logo.svg" alt="My Unsplash Logo"></a>
+        <!-- Searching bar -->
+        <div class="search-bar me-auto">
+            <img src="/img/search-icon.svg" alt="Search Icon">
+            <input id="search-input" type="text" placeholder="Search by name">
+        </div>
+        <!-- Add image -->
+        <button class="btn btn-success" onclick="openAddPhotoPopup()">Add a photo</button>
+    </nav>
+    <main>
+        <!-- Images -->
+        <div class="column" id="c1">
+        </div>
+
+        <div class="column" id="c2">
+        </div>
+
+        <div class="column" id="c3">
+        </div>
+    </main>
+
+    <div id="addPhoto">
+        <form action="/add" method="post">
+            <h3>Add a new photo</h3>
+            <label for="imageLabel">Label</label>
+            <input type="text" name="imageLabel" id="imageLabel" placeholder="A cool label">
+            <label for="imageLink">Photo URL</label>
+            <input type="text" name="imageLink" id="imageLink" placeholder="url">
+            <div id="buttons">
+                <a onclick="closeAddPhotoPopup()">Cancel</a>
+                <button type="submit" class="btn btn-success" onclick="addImage(document.getElementById('imageLink').value)">Submit</button>
+            </div>
+        </form>
+        <div id="addPhoto-background"></div>
+    </div>
+
+    <div id="deletePhoto">
+        <form action="/delete" method="post">
+            <h3>Are you sure?</h3>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="******************">
+            <div id="buttons">
+                <a onclick="closeDeletePhotoPopup()">Cancel</a>
+                <button type="submit" class="btn btn-danger" name="button" value="">Delete</button>
+            </div>
+        </form>
+        <div id="deletePhoto-background"></div>
+    </div>
+
+
+    <script src="/js/scripts.js" defer></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+</body>
+</html>

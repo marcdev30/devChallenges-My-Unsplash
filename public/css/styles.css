@@ -1,0 +1,258 @@
+/* Nav */
+
+nav {
+    height: 120px;
+}
+
+.logo {
+    margin: 0 24px 0 99px;
+}
+
+.search-bar {
+    border: 1px solid #BDBDBD;
+    border-radius: 12px;
+    width: 380px;
+}
+
+.search-bar > img {
+    height: 17px;
+    width: 17px;
+    margin: 18px 0px 18px 19px;
+    filter: invert(89%) sepia(0%) saturate(0%) hue-rotate(343deg) brightness(87%) contrast(88%);
+}
+
+.search-bar > input {
+    border: none;
+    padding: 0;
+    margin: 18px 0 18px 20px;
+    width: 70%;
+}
+
+.search-bar > input::placeholder {
+    color: #BDBDBD;
+}
+
+.search-bar > input:focus {
+    outline: none;
+}
+
+.btn-success {
+    margin: 0 99px 0 auto;
+}
+
+main {
+    display: flex;
+    padding: 0 30px 10px;
+}
+
+.column {
+    display: inline-block;
+    width: 33%;
+    /* min-height: 100px; */
+    height: min-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.column > img {
+    width: 95%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.image {
+    width: 95%;
+    max-height: 800px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.image > img {
+    width: 100%;
+    max-height: 800px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.image > h4 {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    left: 24px;
+    bottom: 33px;
+    display: none;
+}
+
+.image:hover > h4 {
+    display: block;
+}
+
+.image > button {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: none;
+}
+
+.image:hover > button {
+    display: block;
+}
+
+.image > .image-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: black;
+    opacity: 0.38;
+    display: none;
+}
+
+.image:hover > .image-background {
+    display: block;
+}
+
+
+/* Add photo section */
+
+
+#addPhoto, #deletePhoto {
+    display: none;
+}
+
+#addPhoto-background, #deletePhoto-background {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 25%;
+}
+
+#addPhoto > form, #deletePhoto > form {
+    z-index: 1;
+    position: fixed;
+    text-align: left;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 620px;
+    background: white;
+    padding: 24px 36px 24px 32px;
+    border-radius: 12px;
+}
+
+#addPhoto h3, #deletePhoto h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 21px;
+    color: #333333;
+}
+
+#addPhoto label, #deletePhoto label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4F4F4F;
+}
+
+#addPhoto input, #deletePhoto input {
+    margin: 10px 0 18px;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #4F4F4F;
+    border-radius: 12px;
+    padding: 18px 0 18px 18px;
+}
+
+#addPhoto input::placeholder, #deletePhoto input::placeholder {
+    color: #BDBDBD;
+}
+
+#buttons {
+    margin: 6px 0 0 auto;
+    text-align: right;
+}
+
+#buttons a {
+    font-size: 16px;
+    color: #BDBDBD;
+    margin-right: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#buttons button {
+    margin: 0;
+    padding: 15px 23px 18px;
+    font-size: 16px;
+    color: white;
+}
+
+@media (max-width: 890px) {
+    .search-bar {
+        width: 40%;
+        min-width: 214px;
+    }
+
+    .logo {
+        margin-left: 30px;
+    }
+
+    .btn-success {
+        margin-right: 30px;
+    }
+
+    .image {
+        margin-bottom: 5%;
+    }
+
+    #addPhoto > form, #deletePhoto > form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    nav {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        gap: 20px;
+    }
+
+    .search-bar {
+        width: 80%;
+        order: 2;
+        margin: auto;
+    }
+
+    .btn-success {
+        margin: 0;
+    }
+}
