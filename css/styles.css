@@ -1,0 +1,39 @@
+/* Nav */
+
+nav {
+    height: 120px;
+}
+
+.logo {
+    margin: 0 24px 0 99px;
+}
+
+.search-bar {
+    border: 1px solid #BDBDBD;
+    border-radius: 12px;
+}
+
+.search-bar > img {
+    height: 17px;
+    width: 17px;
+    margin: 18px 0px 18px 19px;
+    filter: invert(89%) sepia(0%) saturate(0%) hue-rotate(343deg) brightness(87%) contrast(88%);
+}
+
+.search-bar > input {
+    border: none;
+    padding: 0;
+    margin: 18px 136px 18px 20px;
+}
+
+.search-bar > input::placeholder {
+    color: #BDBDBD;
+}
+
+.search-bar > input:focus {
+    outline: none;
+}
+
+.btn-success {
+    margin: 0 99px 0 auto;
+}
