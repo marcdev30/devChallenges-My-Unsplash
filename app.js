@@ -86,7 +86,7 @@ app.post("/delete", function(req, res) {
     const passwordEntered = req.body.password;
     const postId = req.body.button;
 
-    if(passwordEntered === adminPass) {
+    if(passwordEntered === process.env.adminPass) {
         Post.deleteOne({_id: postId}, function(err) {
             if(!err) {
                 console.log("Deleting an image...");
